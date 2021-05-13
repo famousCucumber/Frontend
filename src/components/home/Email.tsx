@@ -37,6 +37,8 @@ const EmailDiv = styled.div`
     position: relative;
     width: 100%;
     height: 50px;
+    justify-self: flex-end;
+    margin-top: auto;
 `;
 
 const EmailInput = styled.input`

@@ -35,7 +35,7 @@ const StyledLabel = styled.label`
     padding: 10px 6px;
 
     border-radius: 12px;
-    border: solid 1.2px ${({ theme }) => theme.colors.c500};
+    border: ${({ theme }) => theme.borderSetting};
     color: ${({ theme }) => theme.colors.c500};
     background-color: ${({ theme }) => theme.colors.c100};
     cursor: pointer;
@@ -54,5 +54,6 @@ const StyledLabel = styled.label`
     ${StyledInput}:checked + & {
         color: ${({ theme }) => theme.colors.c100};
         background-color: ${({ theme }) => theme.colors.c700};
+        border-color: ${({ theme }) => theme.colors.c700};
     }
 `;

@@ -124,7 +124,7 @@ const SelectSection = styled.section`
     width: 100%;
     height: 60px;
     border-radius: 12px;
-    border: solid 1.2px ${({ theme }) => theme.colors.c500};
+    /* border: ${({ theme }) => theme.borderSetting}; */
     display: flex;
 
     transition: all 0.5s;
@@ -157,7 +157,9 @@ const SelectedCity = styled.div<{ isCity: boolean }>`
 
     border-radius: ${({ isCity }) =>
         isCity ? "12px 0px 0px 12px" : "0px 12px 12px 0px"};
-    border-right: solid 1.2px ${({ theme }) => theme.colors.c500};
+
+    border: ${({ theme }) => theme.borderSetting};
+    ${({ isCity }) => (isCity ? "" : "border-left: none;")}
 
     display: flex;
     justify-content: center;
@@ -238,7 +240,8 @@ const SelectButton = styled.button`
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: solid 2px ${({ theme }) => theme.colors.c500};
+    /* border: solid 2px ${({ theme }) => theme.colors.c500}; */
+    border: ${({ theme }) => theme.borderSetting};
     background-color: white;
 
     font-size: 24px;

@@ -1,6 +1,7 @@
 import { useState } from "react";
+import axios from "axios";
 
-import { keywordData } from "data";
+import { countyByCityData, keywordData } from "data";
 import { ICity, ICounty, ITag } from "types";
 import HomePresenter from "./HomePresenter";
 
@@ -27,18 +28,31 @@ const HomeContainer = () => {
             return;
         }
 
-        const checkedData = tags.filter((tag) => tag.isSelect === true);
+        const checkedTag = tags.filter((tag) => tag.isSelect === true);
 
-        if (checkedData.length === 0) {
+        if (checkedTag.length === 0) {
             alert("최소 한 가지 이상의 태그를 선택해주세요 !");
             return;
         }
+        const fetchingTags: string[] = [];
+        checkedTag.map((tag) => {
+            fetchingTags.push(tag.name);
+        });
 
-        const selectedLocation = selectedCounties.map(
-            (county) => county.passingName
-        );
+        const fetchingCounties: string[] = [];
+        selectedCounties.map((county, index) => {
+            if (county.name === "전체") {
+                const tempCity = selectedCities[index];
+                for (let tempCounty of countyByCityData[tempCity]) {
+                    if (tempCounty !== "전체")
+                        fetchingCounties.push(`${tempCity} ${tempCounty}`);
+                }
+            } else {
+                fetchingCounties.push(county.passingName);
+            }
+        });
 
-        console.log(email, checkedData, selectedLocation);
+        console.log(email, fetchingTags, fetchingCounties);
 
         setEmail("");
         setTags(keywordData);
