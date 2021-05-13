@@ -11,7 +11,7 @@ import { citiesData, countyByCityData } from "data";
 interface HomePresenterProps {
     tags: ITag[];
     setTags: React.Dispatch<React.SetStateAction<ITag[]>>;
-    cityWithCounties: ICityWithCounties[];
+
     selectedCities: ICity[];
     setSelectedCities: React.Dispatch<React.SetStateAction<ICity[]>>;
     selectedCounties: ICounty[];
@@ -21,7 +21,6 @@ interface HomePresenterProps {
 const HomePresenter = ({
     tags,
     setTags,
-    cityWithCounties,
     selectedCities,
     selectedCounties,
     setSelectedCities,
@@ -71,6 +70,20 @@ const HomePresenter = ({
         );
     };
 
+    const onPlusClick = () => {
+        setSelectedCities((prev) => [...prev, "서울특별시"]);
+        setSelectedCounties((prev) => [
+            ...prev,
+            { name: "전체", passingName: "서울특별시 전체" },
+        ]);
+    };
+
+    const onMinusClick = (targetIndex: number) => {
+        setSelectedCities((prev) =>
+            prev.filter((_, index) => index !== targetIndex)
+        );
+    };
+
     return (
         <StyledMain>
             <Result tags={tags} />
@@ -92,13 +105,14 @@ const HomePresenter = ({
 
                 {selectedCities.map((city, index) => {
                     return (
-                        <SelectSection>
+                        <SelectSection key={index}>
                             <SelectedCity>
                                 {city}
 
                                 <CandidateCity>
-                                    {citiesData.map((city) => (
+                                    {citiesData.map((city, cityIndex) => (
                                         <span
+                                            key={cityIndex}
                                             onClick={() => {
                                                 onCityClick(index, city);
                                             }}
@@ -113,17 +127,37 @@ const HomePresenter = ({
                                 {selectedCounties[index].name}
 
                                 <CandidateCity>
-                                    {countyByCityData[city].map((county) => (
-                                        <span
-                                            onClick={() => {
-                                                onCountyClick(index, county);
-                                            }}
-                                        >
-                                            {county}
-                                        </span>
-                                    ))}
+                                    {countyByCityData[city].map(
+                                        (county, countyIndex) => (
+                                            <span
+                                                key={countyIndex}
+                                                onClick={() => {
+                                                    onCountyClick(
+                                                        index,
+                                                        county
+                                                    );
+                                                }}
+                                            >
+                                                {county}
+                                            </span>
+                                        )
+                                    )}
                                 </CandidateCity>
                             </SelectedCity>
+                            {selectedCities.length < 5 &&
+                            index === selectedCities.length - 1 ? (
+                                <button onClick={onPlusClick}>+</button>
+                            ) : null}
+
+                            {selectedCities.length >= 2 ? (
+                                <button
+                                    onClick={() => {
+                                        onMinusClick(index);
+                                    }}
+                                >
+                                    -
+                                </button>
+                            ) : null}
                         </SelectSection>
                     );
                 })}

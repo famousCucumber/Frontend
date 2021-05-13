@@ -1,13 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import { keywordData, citiesData, countyByCityData } from "data";
-import {
-    ICity,
-    ICityWithCounties,
-    ICounty,
-    ICountyByCityData,
-    ITag,
-} from "types";
+import { keywordData } from "data";
+import { ICity, ICityWithCounties, ICounty, ITag } from "types";
 import HomePresenter from "./HomePresenter";
 
 const HomeContainer = () => {
@@ -20,7 +14,7 @@ const HomeContainer = () => {
         "서울특별시",
     ]);
     const [selectedCounties, setSelectedCounties] = useState<ICounty[]>([
-        { name: "강남구", passingName: "서울특별시 강남구" },
+        { name: "전체", passingName: "서울특별시 전체" },
     ]);
     const [email, setEmail] = useState<string>("");
 
@@ -49,7 +43,6 @@ const HomeContainer = () => {
         <HomePresenter
             tags={tags}
             setTags={setTags}
-            cityWithCounties={cityWithCounties}
             selectedCities={selectedCities}
             setSelectedCities={setSelectedCities}
             selectedCounties={selectedCounties}
