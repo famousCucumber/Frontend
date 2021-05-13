@@ -89,7 +89,7 @@ const CardContainerSection = styled.section`
     display: inline-table;
     overflow: hidden;
     border-radius: 0.5em;
-    background-color :rgba(185, 185, 185, 0.3);;
+    background-color :rgba(231, 231, 231, 0.2);;
 `
 
 const TopSection = styled.section`
