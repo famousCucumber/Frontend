@@ -65,7 +65,7 @@ const DateSection = styled.section`
 `
 
 const StyleSection = styled.section`
-
+    text-align: center;
     width: 60vw;
     height: 100vh;
     /* background-color: ${({ theme }) => theme.colors.c100}; */
