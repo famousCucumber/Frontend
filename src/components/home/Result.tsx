@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ITag } from "types";
 import Card from "components/home/Card";
+import FadeIn from 'react-fade-in';
 
 interface ResultProps {
     tags: ITag[];
@@ -15,20 +16,21 @@ const Result = ({ tags }: ResultProps) => {
                 {getCurrentDate()}
             </DateSection>
             <EmptyBlock/>
+            <FadeIn>
             {tags.map((tag, index) => 
                     <>
-                    tag.isSelect ? <Card key={`${index} + ${tag.name}`} tag={tag}></Card> : <></>
-                    <EmptyBlock2/>
+                    tag.isSelect ? <Card key={`${index} + ${tag.name}`} tag={tag}></Card><EmptyBlock2></EmptyBlock2>:<></>
                     </>
                 )
             }
+            </FadeIn>
         </StyleSection>
     );
 };
 
 const getCurrentTime = () => {
     let today = new Date();
-    const hour = today.getHours();
+    const hour = today.getHours().toString().padStart(2, '0');
     const minute = today.getMinutes().toString().padStart(2, '0');
     return `${hour}:${minute}`
 }
@@ -48,7 +50,7 @@ const EmptyBlock = styled.section`
     height: 5%;
 `
 
-const EmptyBlock2 = styled.section`
+const EmptyBlock2 = styled.div`
     height: 1%;
 `
 
