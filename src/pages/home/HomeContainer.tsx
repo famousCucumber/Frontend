@@ -62,7 +62,7 @@ const HomeContainer = () => {
             url: "https://famouscucumber-ojebi.run.goorm.io/user/register",
             data: {
                 email,
-                locationList: fetchingTags,
+                locationList: fetchingCounties,
                 selectList: fetchingTags,
             },
         }).then((res) => {
