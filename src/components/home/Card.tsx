@@ -98,14 +98,14 @@ const TopSection = styled.section`
 
 const TopIconSection = styled.section`
     height: 100%;
-    width: 10%;
+    width: 7%;
     text-align: left;
     display: inline-table;
 `
 
 const TopTitleSection = styled.section`
     height: 100%;
-    width: 90%;
+    width: 93%;
     text-align: left;
     font-size: 0.9em;
     color: black;
