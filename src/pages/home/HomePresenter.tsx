@@ -6,11 +6,9 @@ import { ICity, ICounty, ITag } from "types";
 import Checkbox from "components/home/Checkbox";
 import HomeHeader from "components/home/HomeHeader";
 
-import { citiesData, countyByCityData } from "data";
+import { countyByCityData } from "data";
 import Select from "components/home/Select";
 import Email from "components/home/Email";
-
-const TRANSITION_NAME: string = "select";
 
 interface HomePresenterProps {
     tags: ITag[];
@@ -21,7 +19,7 @@ interface HomePresenterProps {
     setSelectedCounties: React.Dispatch<React.SetStateAction<ICounty[]>>;
     email: string;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
-    onSubmit: (e: React.FormEvent) => void
+    onSubmit: (e: React.FormEvent) => void;
 }
 
 const HomePresenter = ({
@@ -118,7 +116,7 @@ const HomePresenter = ({
                     onMinusClick={onMinusClick}
                 />
 
-                <Email email={email} setEmail={setEmail} onSubmit={onSubmit}/>
+                <Email email={email} setEmail={setEmail} onSubmit={onSubmit} />
             </StyledMenu>
         </StyledMain>
     );
@@ -130,6 +128,10 @@ const StyledMain = styled.main`
     width: 100vw;
     height: 100vh;
     display: flex;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        flex-direction: column;
+    }
 `;
 
 const StyledMenu = styled.div`
@@ -144,6 +146,13 @@ const StyledMenu = styled.div`
     justify-content: start;
     align-items: center;
     gap: 32px;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        width: 100vw;
+        height: 64vh;
+        padding: 12px 18px;
+        gap: 1em;
+    }
 `;
 
 const StyledCheckDiv = styled.div`

@@ -59,6 +59,10 @@ const EmailLabel = styled.label`
     ${EmailInput}:focus ~ & {
         transform: translateY(-100%) scale(0.8);
     }
+    ${({ theme }) => theme.sizes.mobile} {
+        font-size: 12px;
+        top: 0;
+    }
 `;
 
 const EmailSpan = styled.span`
@@ -110,4 +114,8 @@ const SubmitButton = styled.button`
 
     border-radius: 50%;
     border: solid 2px ${({ theme }) => theme.colors.c500};
+    ${({ theme }) => theme.sizes.mobile} {
+        width: 40px;
+        height: 40px;
+    }
 `;

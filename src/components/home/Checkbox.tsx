@@ -56,4 +56,10 @@ const StyledLabel = styled.label`
         background-color: ${({ theme }) => theme.colors.c700};
         border-color: ${({ theme }) => theme.colors.c700};
     }
+
+    ${({ theme }) => theme.sizes.mobile} {
+        padding: 6px 4px;
+        height: 26px;
+        font-size: 1em;
+    }
 `;

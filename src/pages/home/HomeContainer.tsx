@@ -37,6 +37,7 @@ const HomeContainer = () => {
         const fetchingTags: string[] = [];
         checkedTag.map((tag) => {
             fetchingTags.push(tag.name);
+            return null;
         });
 
         const fetchingCounties: string[] = [];
@@ -50,6 +51,7 @@ const HomeContainer = () => {
             } else {
                 fetchingCounties.push(county.passingName);
             }
+            return null;
         });
 
         console.log(email, fetchingTags, fetchingCounties);

@@ -77,6 +77,11 @@ const StyleSection = styled.section`
     /* background-color: ${({ theme }) => theme.colors.c100}; */
     background-color: white;
     text-align: center;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        width: 100vw;
+        height: 60vh;
+    }
 `;
 
 const CardSection = styled.section`

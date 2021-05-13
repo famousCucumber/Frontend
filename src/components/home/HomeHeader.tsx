@@ -18,11 +18,19 @@ const StyledHeader = styled.header`
 `;
 
 const StyledH1 = styled.h1`
-    font-size: 22px;
-    color: ${({theme}) => theme.colors.c500};
+    color: ${({ theme }) => theme.colors.c500};
+    font-size: 24px;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        font-size: 1.2em;
+    }
 `;
 
 const StyledP = styled.p`
     font-size: 14px;
     opacity: 0.6;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        font-size: 0.85em;
+    }
 `;

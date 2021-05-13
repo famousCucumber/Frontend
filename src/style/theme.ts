@@ -7,5 +7,8 @@ export const theme: DefaultTheme = {
         c500: "#fea82f",
         c700: "#ff6701",
     },
+    sizes: {
+        mobile: "@media screen and (max-width: 768px)",
+    },
     borderSetting: "solid 2px #fea82f",
 };

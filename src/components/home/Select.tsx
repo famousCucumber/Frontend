@@ -117,6 +117,10 @@ const SelectWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    ${({ theme }) => theme.sizes.mobile} {
+        margin-bottom: 20px;
+    }
 `;
 
 const SelectSection = styled.section`
@@ -147,6 +151,10 @@ const SelectSection = styled.section`
     &.${TRANSITION_NAME}-exit-active {
         opacity: 0;
         transform: translateX(20px);
+    }
+
+    ${({ theme }) => theme.sizes.mobile} {
+        height: 40px;
     }
 `;
 
@@ -202,6 +210,11 @@ const CandidateCity = styled.div`
         opacity: 1;
         transform: translateY(0);
     }
+
+    ${({ theme }) => theme.sizes.mobile} {
+        height: 140px;
+        top: -140px;
+    }
 `;
 
 const CandidateSpan = styled.span`
@@ -253,6 +266,11 @@ const SelectButton = styled.button`
 
     &:hover {
         transform: rotate(360deg);
+    }
+
+    ${({ theme }) => theme.sizes.mobile} {
+        width: 40px;
+        height: 40px;
     }
 `;
 
