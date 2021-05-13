@@ -1,9 +1,17 @@
+import { useState } from "react";
+
+import { keywordData, citiesData } from "data";
+import { ITag } from "types";
 import HomePresenter from "./HomePresenter";
 
 const HomeContainer = () => {
-    const name: string = "asdasd";
+    const [tags, setTags] = useState<ITag[]>(keywordData);
 
-    return <HomePresenter />;
+    const [cities, setCities] = useState<string[]>(citiesData);
+
+    const [email, setEmail] = useState<string>("");
+
+    return <HomePresenter tags={tags} setTags={setTags} />;
 };
 
 export default HomeContainer;

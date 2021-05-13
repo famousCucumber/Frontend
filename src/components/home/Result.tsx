@@ -13,5 +13,6 @@ export default Result;
 const StyleSection = styled.section`
     width: 50vw;
     height: 100vh;
-    background-color: ${({ theme }) => theme.colors.c100};
+    /* background-color: ${({ theme }) => theme.colors.c100}; */
+    background-color: white;
 `;
