@@ -69,10 +69,22 @@ const ModalDiv = styled.div`
         opacity: 0;
         left: 100%;
     }
+
+    ${({ theme }) => theme.sizes.mobile} {
+        width: 300px;
+        height: 280px;
+    }
 `;
 
 const ModalH1 = styled.h1`
     color: white;
+    ${({ theme }) => theme.sizes.mobile} {
+        font-size: 1.3rem;
+    }
 `;
 
-const ModalP = styled.p``;
+const ModalP = styled.p`
+    ${({ theme }) => theme.sizes.mobile} {
+        font-size: 0.75rem;
+    }
+`;

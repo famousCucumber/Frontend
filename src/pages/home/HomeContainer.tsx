@@ -70,6 +70,7 @@ const HomeContainer = () => {
             return res;
         });
         console.log(data);
+        // setIsOpenModal(true);
 
         setEmail("");
         setTags(keywordData);
