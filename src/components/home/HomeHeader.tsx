@@ -3,7 +3,7 @@ import styled from "styled-components";
 const HomeHeader = () => {
     return (
         <StyledHeader>
-            <StyledH1>재문골</StyledH1>
+            <StyledH1>난보바</StyledH1>
             <StyledP>내가 원하는 재난문자, 골라받자</StyledP>
         </StyledHeader>
     );

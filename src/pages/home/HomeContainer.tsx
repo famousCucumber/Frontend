@@ -16,6 +16,8 @@ const HomeContainer = () => {
     ]);
     const [email, setEmail] = useState<string>("");
 
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+
     const onSubmit = async (e: React.FormEvent) => {
         const validateEmail = (testEmail: string) => {
             const re = /^[^\s@]+@[^\s@]+$/;
@@ -63,6 +65,9 @@ const HomeContainer = () => {
                 locationList: fetchingTags,
                 selectList: fetchingTags,
             },
+        }).then((res) => {
+            if (res.status === 200) setIsOpenModal(true);
+            return res;
         });
         console.log(data);
 
@@ -83,6 +88,8 @@ const HomeContainer = () => {
             email={email}
             setEmail={setEmail}
             onSubmit={onSubmit}
+            isOpenModal={isOpenModal}
+            setIsOpenModal={setIsOpenModal}
         />
     );
 };

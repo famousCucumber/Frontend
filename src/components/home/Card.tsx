@@ -4,11 +4,7 @@ import { ITag } from "types";
 interface CardProps {
     tag: ITag;
 }
-{
-    /* <EmptyBlock2 key={`${tag.name}${tag.isSelect}`} />
-        <br />
-    </> */
-}
+
 const Card = ({ tag }: CardProps) => (
     // <>
     <CardContainerSection>
@@ -167,8 +163,4 @@ const BottomBodySection = styled.section`
     font-weight: 500;
     display: inline-table;
     text-align: left;
-`;
-
-const EmptyBlock2 = styled.div`
-    height: 1%;
 `;

@@ -9,6 +9,7 @@ import HomeHeader from "components/home/HomeHeader";
 import { countyByCityData } from "data";
 import Select from "components/home/Select";
 import Email from "components/home/Email";
+import SuccessModal from "components/home/SuccessModal";
 
 interface HomePresenterProps {
     tags: ITag[];
@@ -20,6 +21,8 @@ interface HomePresenterProps {
     email: string;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
     onSubmit: (e: React.FormEvent) => void;
+    isOpenModal: boolean;
+    setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const HomePresenter = ({
@@ -32,6 +35,8 @@ const HomePresenter = ({
     email,
     setEmail,
     onSubmit,
+    isOpenModal,
+    setIsOpenModal,
 }: HomePresenterProps) => {
     const onSelectClick = (targetName: string) => {
         setTags((prev) =>
@@ -93,6 +98,10 @@ const HomePresenter = ({
 
     return (
         <StyledMain>
+            <SuccessModal
+                isOpenModal={isOpenModal}
+                setIsOpenModal={setIsOpenModal}
+            />
             <Result tags={tags} />
             <StyledMenu>
                 <HomeHeader />

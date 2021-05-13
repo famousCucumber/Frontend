@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ITag } from "types";
 import Card from "components/home/Card";
-import FadeIn from "react-fade-in";
+
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 interface ResultProps {
