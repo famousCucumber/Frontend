@@ -4,11 +4,11 @@ import Result from "components/home/Result";
 import { ITag } from "types";
 
 const HomePresenter = () => {
-    const dummyTag: ITag = { name: "지진", isSelect: true };
+    const dummyTag: ITag = { name: "기타", isSelect: true };
 
     return (
         <StyledMain>
-            <Result tags={[dummyTag]} />
+            <Result tags={[dummyTag, dummyTag, dummyTag, dummyTag, dummyTag, dummyTag]} />
             <StyledMenu />
         </StyledMain>
     );
