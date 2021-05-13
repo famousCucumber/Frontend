@@ -1,5 +1,4 @@
 import { DefaultTheme } from "styled-components";
-import { IColors } from "style/styled";
 
 export const theme: DefaultTheme = {
     colors: {
@@ -8,4 +7,5 @@ export const theme: DefaultTheme = {
         c500: "#fea82f",
         c700: "#ff6701",
     },
+    borderSetting: "solid 2px #fea82f",
 };

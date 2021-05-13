@@ -65,9 +65,9 @@ const DateSection = styled.section`
 `
 
 const StyleSection = styled.section`
-    text-align: center;
-    width: 50vw;
+
+    width: 60vw;
     height: 100vh;
+    /* background-color: ${({ theme }) => theme.colors.c100}; */
     background-color: white;
-    overflow: scroll;
 `;
