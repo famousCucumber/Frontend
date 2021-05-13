@@ -189,7 +189,7 @@ const CandidateCity = styled.div`
     left: 0;
 
     width: 100%;
-    height: 220px;
+    height: 160px;
     padding: 10px 12px;
     overflow: scroll;
 

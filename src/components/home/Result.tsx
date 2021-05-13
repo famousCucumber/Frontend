@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ITag } from "types";
 import Card from "components/home/Card";
 import FadeIn from "react-fade-in";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 interface ResultProps {
     tags: ITag[];
@@ -13,13 +14,19 @@ const Result = ({ tags }: ResultProps) => {
             <DateSection>{getCurrentDate()}</DateSection>
             <EmptyBlock />
             <CardSection>
-                <FadeIn>
-                    {tags.map((tag, index) =>
-                        tag.isSelect ? (
-                            <Card key={`${index}${tag.name}`} tag={tag}></Card>
-                        ) : null
-                    )}
-                </FadeIn>
+                <TransitionGroup>
+                    {tags
+                        .filter((tag) => tag.isSelect)
+                        .map((tag, index) => (
+                            <CSSTransition
+                                key={index}
+                                timeout={500}
+                                classNames={"card"}
+                            >
+                                <Card key={index} tag={tag} />
+                            </CSSTransition>
+                        ))}
+                </TransitionGroup>
             </CardSection>
         </StyleSection>
     );

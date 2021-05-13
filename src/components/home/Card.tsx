@@ -4,22 +4,23 @@ import { ITag } from "types";
 interface CardProps {
     tag: ITag;
 }
-
-const Card = ({ tag }: CardProps) => (
-    <>
-        <CardContainerSection>
-            <TopSection>
-                <TopIconSection>{getIcon(tag.name)}</TopIconSection>
-                <TopTitleSection>긴급재난문자</TopTitleSection>
-            </TopSection>
-            <BottomSection>
-                <BottomTitleSection>긴급재난문자</BottomTitleSection>
-                <BottomBodySection>{getBody(tag.name)}</BottomBodySection>
-            </BottomSection>
-        </CardContainerSection>
-        <EmptyBlock2 key={`${tag.name}${tag.isSelect}`} />
+{
+    /* <EmptyBlock2 key={`${tag.name}${tag.isSelect}`} />
         <br />
-    </>
+    </> */
+}
+const Card = ({ tag }: CardProps) => (
+    // <>
+    <CardContainerSection>
+        <TopSection>
+            <TopIconSection>{getIcon(tag.name)}</TopIconSection>
+            <TopTitleSection>긴급재난문자</TopTitleSection>
+        </TopSection>
+        <BottomSection>
+            <BottomTitleSection>긴급재난문자</BottomTitleSection>
+            <BottomBodySection>{getBody(tag.name)}</BottomBodySection>
+        </BottomSection>
+    </CardContainerSection>
 );
 
 const getIcon = (keyword: string) => {
@@ -88,7 +89,30 @@ const CardContainerSection = styled.section`
     display: inline-table;
     overflow: hidden;
     border-radius: 0.5em;
-    background-color: rgba(231, 231, 231, 0.2); ;
+    background-color: rgba(231, 231, 231, 0.2);
+    margin-bottom: 14px;
+
+    transition: all 0.4s;
+
+    &.card-enter {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    &.card-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.card-exit {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.card-exit-active {
+        opacity: 0;
+        transform: translateX(30px);
+    }
 `;
 
 const TopSection = styled.section`
