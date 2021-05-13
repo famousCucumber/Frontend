@@ -16,7 +16,7 @@ const HomeContainer = () => {
     ]);
     const [email, setEmail] = useState<string>("");
 
-    const onSubmit = (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         const validateEmail = (testEmail: string) => {
             const re = /^[^\s@]+@[^\s@]+$/;
             return re.test(String(testEmail).toLowerCase());
@@ -53,7 +53,17 @@ const HomeContainer = () => {
         });
 
         console.log(email, fetchingTags, fetchingCounties);
-
+        const data = await axios({
+            method: "post",
+            url: "https://famouscucumber-ojebi.run.goorm.io/user/register",
+            data: {
+                email,
+                locationList: fetchingTags,
+                selectList: fetchingTags,
+            },
+        });
+        console.log(data);
+        
         setEmail("");
         setTags(keywordData);
         setSelectedCities(["서울특별시"]);
