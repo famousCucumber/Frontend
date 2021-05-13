@@ -16,9 +16,14 @@ const HomeContainer = () => {
     const [email, setEmail] = useState<string>("");
 
     const onSubmit = (e: React.FormEvent) => {
+        const validateEmail = (testEmail: string) => {
+            const re = /^[^\s@]+@[^\s@]+$/;
+            return re.test(String(testEmail).toLowerCase());
+        };
+
         e.preventDefault();
-        if (email === "") {
-            alert("이메일을 작성해주세요 !");
+        if (!validateEmail(email)) {
+            alert("이메일을 올바르게 작성해주세요 !");
             return;
         }
 

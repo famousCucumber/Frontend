@@ -135,7 +135,7 @@ const StyledMain = styled.main`
 const StyledMenu = styled.div`
     width: 40vw;
     height: 100vh;
-    padding: 32px 16px;
+    padding: 32px 20px;
     background-color: ${({ theme }) => theme.colors.c100};
     /* background-color: white; */
 

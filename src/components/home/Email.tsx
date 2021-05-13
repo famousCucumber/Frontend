@@ -17,16 +17,16 @@ const Email = ({ email, setEmail, onSubmit }: EmailProps) => {
             <EmailInput
                 required
                 id="email"
-                type="email"
+                type="text"
                 onChange={onChange}
                 value={email}
             />
-            <EmailLabel htmlFor="email">soma@gmail.com</EmailLabel>
+            <EmailLabel htmlFor="email">E-mail</EmailLabel>
             <EmailOverSpan></EmailOverSpan>
             <EmailSpan></EmailSpan>
-            <button type="submit" onClick={onSubmit}>
-                submit
-            </button>
+            <SubmitButton type="submit" onClick={onSubmit}>
+                {">"}
+            </SubmitButton>
         </EmailDiv>
     );
 };
@@ -43,7 +43,6 @@ const EmailInput = styled.input`
     all: unset;
     width: 100%;
     height: 100%;
-    background-color: white;
 `;
 
 const EmailLabel = styled.label`
@@ -51,9 +50,13 @@ const EmailLabel = styled.label`
     top: 30%;
     left: 0;
 
-    ${EmailInput}:valid ~ & {
-        top: 0;
-    }    
+    transition: transform 0.3s;
+    transform-origin: left;
+
+    ${EmailInput}:valid ~ &,
+    ${EmailInput}:focus ~ & {
+        transform: translateY(-100%) scale(0.8);
+    }
 `;
 
 const EmailSpan = styled.span`
@@ -78,7 +81,31 @@ const EmailOverSpan = styled.span`
     height: 3px;
     background-color: ${({ theme }) => theme.colors.c500};
 
-    transform: translateX(0);
+    transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
+
+    ${EmailInput}:valid ~ &,
+    ${EmailInput}:focus ~ & {
+        transform: scaleX(1);
+    }
+`;
+
+const SubmitButton = styled.button`
+    all: unset;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+
+    z-index: 4;
+    cursor: pointer;
+
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    text-align: center;
+    font-size: 22px;
+
+    border-radius: 50%;
+    border: solid 2px ${({ theme }) => theme.colors.c500};
 `;

@@ -172,7 +172,7 @@ const SelectedCity = styled.div<{ isCity: boolean }>`
 `;
 
 const CandidateCity = styled.div`
-    z-index: 2;
+    z-index: 9;
     position: absolute;
     top: 110%;
     left: 0;
