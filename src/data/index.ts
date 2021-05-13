@@ -1,4 +1,4 @@
-import { ITag } from "types";
+import { ICity, ITag } from "types";
 
 export const keywordData: ITag[] = [
     { name: "강풍", isSelect: false },
@@ -15,7 +15,7 @@ export const keywordData: ITag[] = [
     { name: "기타", isSelect: false },
 ];
 
-export const citiesData: string[] = [
+export const citiesData: ICity[] = [
     "서울특별시",
     "인천광역시",
     "대구광역시",
