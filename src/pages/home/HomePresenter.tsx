@@ -8,6 +8,7 @@ import HomeHeader from "components/home/HomeHeader";
 
 import { citiesData, countyByCityData } from "data";
 import Select from "components/home/Select";
+import Email from "components/home/Email";
 
 const TRANSITION_NAME: string = "select";
 
@@ -18,6 +19,9 @@ interface HomePresenterProps {
     setSelectedCities: React.Dispatch<React.SetStateAction<ICity[]>>;
     selectedCounties: ICounty[];
     setSelectedCounties: React.Dispatch<React.SetStateAction<ICounty[]>>;
+    email: string;
+    setEmail: React.Dispatch<React.SetStateAction<string>>;
+    onSubmit: (e: React.FormEvent) => void
 }
 
 const HomePresenter = ({
@@ -27,6 +31,9 @@ const HomePresenter = ({
     selectedCounties,
     setSelectedCities,
     setSelectedCounties,
+    email,
+    setEmail,
+    onSubmit,
 }: HomePresenterProps) => {
     const onSelectClick = (targetName: string) => {
         setTags((prev) =>
@@ -110,6 +117,8 @@ const HomePresenter = ({
                     onPlusClick={onPlusClick}
                     onMinusClick={onMinusClick}
                 />
+
+                <Email email={email} setEmail={setEmail} onSubmit={onSubmit}/>
             </StyledMenu>
         </StyledMain>
     );

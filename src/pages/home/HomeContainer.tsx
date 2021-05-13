@@ -15,26 +15,31 @@ const HomeContainer = () => {
     ]);
     const [email, setEmail] = useState<string>("");
 
-    // useEffect(() => {
-    //     setCityWithCounites([]);
+    const onSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email === "") {
+            alert("이메일을 작성해주세요 !");
+            return;
+        }
 
-    //     citiesData.map((city) => {
-    //         const counties = countyByCityData[city as ICity];
-    //         const tempCounties: ICounty[] = [];
-    //         counties.map((county) => {
-    //             tempCounties.push({
-    //                 name: county,
-    //                 passingName: `${city} ${county}`,
-    //                 isSelect: false,
-    //             });
-    //         });
+        const checkedData = tags.filter((tag) => tag.isSelect === true);
 
-    //         setCityWithCounites((prev) => [
-    //             ...prev,
-    //             { name: city, counties: tempCounties },
-    //         ]);
-    //     });
-    // }, []);
+        if (checkedData.length === 0) {
+            alert("최소 한 가지 이상의 태그를 선택해주세요 !");
+            return;
+        }
+
+        const selectedLocation = selectedCounties.map(
+            (county) => county.passingName
+        );
+
+        console.log(email, checkedData, selectedLocation);
+
+        setEmail("");
+        setTags(keywordData);
+        setSelectedCities(["서울특별시"]);
+        setSelectedCounties([{ name: "전체", passingName: "서울특별시 전체" }]);
+    };
 
     return (
         <HomePresenter
@@ -44,6 +49,9 @@ const HomeContainer = () => {
             setSelectedCities={setSelectedCities}
             selectedCounties={selectedCounties}
             setSelectedCounties={setSelectedCounties}
+            email={email}
+            setEmail={setEmail}
+            onSubmit={onSubmit}
         />
     );
 };

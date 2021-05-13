@@ -117,7 +117,6 @@ const SelectWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
-    transition: height 0.2s;
 `;
 
 const SelectSection = styled.section`
