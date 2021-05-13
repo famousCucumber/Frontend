@@ -7,7 +7,6 @@ interface ResultProps {
 }
 const Result = ({ tags }: ResultProps) => {
     return (
-        <>
         <StyleSection>
             <TimeSection>
                 {getCurrentTime()}
@@ -24,7 +23,6 @@ const Result = ({ tags }: ResultProps) => {
                 )
             }
         </StyleSection>
-        </>
     );
 };
 
