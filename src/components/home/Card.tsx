@@ -7,6 +7,7 @@ interface CardProps {
 }
 
 const Card = ({ tag }: CardProps) => (
+    <>
     <CardContainerSection>
         <TopSection>
             <TopIconSection>{getIcon(tag.name)}</TopIconSection>
@@ -17,6 +18,9 @@ const Card = ({ tag }: CardProps) => (
             <BottomBodySection>{getBody(tag.name)}</BottomBodySection>
         </BottomSection>
     </CardContainerSection>
+    <EmptyBlock2 key={`${tag.name}${tag.isSelect}`}/>
+    <br/>
+    </>
 )
 
 const getIcon = (keyword: string) => {
@@ -85,7 +89,7 @@ const CardContainerSection = styled.section`
     display: inline-table;
     overflow: hidden;
     border-radius: 0.5em;
-    background-color :rgba(255, 255, 255, 0.3);;
+    background-color :rgba(185, 185, 185, 0.3);;
 `
 
 const TopSection = styled.section`
@@ -140,4 +144,8 @@ const BottomBodySection = styled.section`
     font-weight: 500;
     display: inline-table;
     text-align: left;
+`
+
+const EmptyBlock2 = styled.div`
+    height: 1%;
 `
