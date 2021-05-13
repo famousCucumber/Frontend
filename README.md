@@ -28,6 +28,10 @@
 
 
 
+<iframe width="300" height="500" src="https://user-images.githubusercontent.com/20268101/118186563-d6567e80-b478-11eb-978e-29263228420c.mov" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+
+
+
 ## 1. 난보바 기능
 
 #### 1. 재난 문자 알림 키워드 선택
