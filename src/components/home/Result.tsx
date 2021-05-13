@@ -19,7 +19,7 @@ const Result = ({ tags }: ResultProps) => {
             <FadeIn>
             {tags.map((tag, index) => 
                     <>
-                    tag.isSelect ? <Card key={`${index} + ${tag.name}`} tag={tag}></Card><EmptyBlock2></EmptyBlock2>:<></>
+                    tag.isSelect ? <Card key={`${index}${tag.name}`} tag={tag}></Card><EmptyBlock2 key={`${index}${tag.name}${tag.isSelect}`}/>:<></>
                     </>
                 )
             }
