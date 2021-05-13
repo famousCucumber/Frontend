@@ -6,7 +6,7 @@
 
 
 
-<center><img src="./image/logo.png" width="300" height="300"></center>
+<center><img src="https://user-images.githubusercontent.com/20268101/118185165-2fbdae00-b477-11eb-8760-ca9b208f6844.png" width="300" height="300"></center>
 
 쉴 새 없이 날아오는 재난 문자 때문에 스트레스 받으신 적이 있으신가요?
 
@@ -32,7 +32,7 @@
 
 #### 1. 재난 문자 알림 키워드 선택
 
-<center><img src="./image/main3.png" width="400"></center>
+<center><img src="https://user-images.githubusercontent.com/20268101/118185037-0a30a480-b477-11eb-951c-1c22d834993e.png" width="400"></center>
 
 강풍, 호우, 한파, 폭염, 산불, 지진, 미세먼지, 전염병, 코로나, 사고, 교통량, 기타까지 
 
@@ -42,7 +42,7 @@
 
 #### 2. 재난 문자 알림 지역 선택
 
-<center><img src="./image/main4.png" width="400"></center>
+<center><img src="https://user-images.githubusercontent.com/20268101/118185033-08ff7780-b477-11eb-99fa-e7746109b3de.png" width="400"></center>
 
 내가 원하는 지역에서만 발생하는 재난문자를  받아보기 위해 지역 키워드를 선택 할 수 있습니다
 
@@ -54,7 +54,7 @@
 
 
 
-#### <img src="./image/main5.png" width="600">
+#### <img src="https://user-images.githubusercontent.com/20268101/118185022-056bf080-b477-11eb-922b-ff258ba3818c.png" width="600">
 
 
 
@@ -64,9 +64,9 @@
 
 #### 4. 실제 문자를 받아보는 듯한 느낌의 동적 UI와 반응형 디자인 적용
 
-<center><img src="./image/main6.png" width="600"></center>
+<center><img src="https://user-images.githubusercontent.com/20268101/118185035-08ff7780-b477-11eb-8cb8-d5d1441fcf60.png" width="600"></center>
 
-<center><img src="./image/main7.png" width="400"></center>
+<center><img src="https://user-images.githubusercontent.com/20268101/118185024-069d1d80-b477-11eb-911c-83387a212830.png" width="400"></center>
 
 
 
