@@ -63,7 +63,7 @@ const HomeContainer = () => {
             },
         });
         console.log(data);
-        
+
         setEmail("");
         setTags(keywordData);
         setSelectedCities(["서울특별시"]);
