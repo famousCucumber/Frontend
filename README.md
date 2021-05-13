@@ -28,8 +28,7 @@
 
 
 
-<iframe width="300" height="500" 
-        src="https://user-images.githubusercontent.com/20268101/118186563-d6567e80-b478-11eb-978e-29263228420c.mov" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+<center><img src="https://user-images.githubusercontent.com/20268101/118188134-e707f400-b47a-11eb-9ca8-a1a038a21278.gif" width="300" height="550"></center>
 
 
 
