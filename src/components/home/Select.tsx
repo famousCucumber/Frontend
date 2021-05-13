@@ -164,8 +164,9 @@ const SelectedCity = styled.div<{ isCity: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: ${({ theme }) => theme.colors.c500};
+
+    transition: all 0.3s;
 
     &:hover {
         background-color: ${({ theme }) => theme.colors.c500};
