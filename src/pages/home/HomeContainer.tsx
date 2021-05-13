@@ -1,14 +1,11 @@
 import { useState } from "react";
 
 import { keywordData } from "data";
-import { ICity, ICityWithCounties, ICounty, ITag } from "types";
+import { ICity, ICounty, ITag } from "types";
 import HomePresenter from "./HomePresenter";
 
 const HomeContainer = () => {
     const [tags, setTags] = useState<ITag[]>(keywordData);
-    const [cityWithCounties, setCityWithCounites] = useState<
-        ICityWithCounties[]
-    >([]);
 
     const [selectedCities, setSelectedCities] = useState<ICity[]>([
         "서울특별시",

@@ -1,5 +1,4 @@
 import { DefaultTheme } from "styled-components";
-import { IColors } from "style/styled";
 
 export const theme: DefaultTheme = {
     colors: {

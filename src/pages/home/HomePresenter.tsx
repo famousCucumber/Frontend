@@ -2,16 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import Result from "components/home/Result";
-import { ICity, ICityWithCounties, ICounty, ITag } from "types";
+import { ICity, ICounty, ITag } from "types";
 import Checkbox from "components/home/Checkbox";
 import HomeHeader from "components/home/HomeHeader";
 
 import { citiesData, countyByCityData } from "data";
+import Select from "components/home/Select";
+
+const TRANSITION_NAME: string = "select";
 
 interface HomePresenterProps {
     tags: ITag[];
     setTags: React.Dispatch<React.SetStateAction<ITag[]>>;
-
     selectedCities: ICity[];
     setSelectedCities: React.Dispatch<React.SetStateAction<ICity[]>>;
     selectedCounties: ICounty[];
@@ -63,7 +65,7 @@ const HomePresenter = ({
                 if (index === targetIndex)
                     return {
                         name: targetCounty,
-                        passingName: `${SelectedCity[targetIndex]} ${targetCounty}`,
+                        passingName: `${selectedCities[targetIndex]} ${targetCounty}`,
                     };
                 else return data;
             })
@@ -100,67 +102,14 @@ const HomePresenter = ({
                         />
                     ))}
                 </StyledCheckDiv>
-
-                {/* <div>{cityWithCounties.map((city) => city.name)}</div> */}
-
-                {selectedCities.map((city, index) => {
-                    return (
-                        <SelectSection key={index}>
-                            <SelectedCity>
-                                {city}
-
-                                <CandidateCity>
-                                    {citiesData.map((city, cityIndex) => (
-                                        <span
-                                            key={cityIndex}
-                                            onClick={() => {
-                                                onCityClick(index, city);
-                                            }}
-                                        >
-                                            {city}
-                                        </span>
-                                    ))}
-                                </CandidateCity>
-                            </SelectedCity>
-
-                            <SelectedCity>
-                                {selectedCounties[index].name}
-
-                                <CandidateCity>
-                                    {countyByCityData[city].map(
-                                        (county, countyIndex) => (
-                                            <span
-                                                key={countyIndex}
-                                                onClick={() => {
-                                                    onCountyClick(
-                                                        index,
-                                                        county
-                                                    );
-                                                }}
-                                            >
-                                                {county}
-                                            </span>
-                                        )
-                                    )}
-                                </CandidateCity>
-                            </SelectedCity>
-                            {selectedCities.length < 5 &&
-                            index === selectedCities.length - 1 ? (
-                                <button onClick={onPlusClick}>+</button>
-                            ) : null}
-
-                            {selectedCities.length >= 2 ? (
-                                <button
-                                    onClick={() => {
-                                        onMinusClick(index);
-                                    }}
-                                >
-                                    -
-                                </button>
-                            ) : null}
-                        </SelectSection>
-                    );
-                })}
+                <Select
+                    selectedCities={selectedCities}
+                    selectedCounties={selectedCounties}
+                    onCityClick={onCityClick}
+                    onCountyClick={onCountyClick}
+                    onPlusClick={onPlusClick}
+                    onMinusClick={onMinusClick}
+                />
             </StyledMenu>
         </StyledMain>
     );
@@ -171,12 +120,11 @@ export default HomePresenter;
 const StyledMain = styled.main`
     width: 100vw;
     height: 100vh;
-
     display: flex;
 `;
 
 const StyledMenu = styled.div`
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
     padding: 32px 16px;
     background-color: ${({ theme }) => theme.colors.c100};
@@ -186,6 +134,7 @@ const StyledMenu = styled.div`
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    gap: 32px;
 `;
 
 const StyledCheckDiv = styled.div`
@@ -196,36 +145,4 @@ const StyledCheckDiv = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-`;
-
-const SelectSection = styled.section`
-    width: 100%;
-    height: 100px;
-    background-color: white;
-
-    display: flex;
-`;
-
-const SelectedCity = styled.div`
-    position: relative;
-    width: 40%;
-    height: 100%;
-
-    background-color: green;
-`;
-
-const CandidateCity = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: auto;
-    background-color: white;
-
-    opacity: 0;
-
-    ${SelectedCity}:hover > & {
-        opacity: 1;
-    }
 `;

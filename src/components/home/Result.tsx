@@ -11,7 +11,7 @@ const Result = ({ tags }: ResultProps) => {
 export default Result;
 
 const StyleSection = styled.section`
-    width: 50vw;
+    width: 60vw;
     height: 100vh;
     /* background-color: ${({ theme }) => theme.colors.c100}; */
     background-color: white;

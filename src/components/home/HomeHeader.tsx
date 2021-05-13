@@ -14,7 +14,7 @@ export default HomeHeader;
 const StyledHeader = styled.header`
     width: 100%;
     height: auto;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 `;
 
 const StyledH1 = styled.h1`
