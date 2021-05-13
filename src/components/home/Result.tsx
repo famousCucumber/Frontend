@@ -38,7 +38,7 @@ const getCurrentTime = () => {
 const getCurrentDate = () => {
     let today = new Date();
     const weekdayArray = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
-    const month = today.getMonth();
+    const month = today.getMonth() + 1;
     const day = today.getDate().toString().padStart(2, '0');
     const weekday = weekdayArray[today.getDay()];
     return `${month}월 ${day}일 ${weekday}`
