@@ -18,9 +18,9 @@ const Result = ({ tags }: ResultProps) => {
             <EmptyBlock/>
             <FadeIn>
             {tags.map((tag, index) => 
-                    <>
-                    tag.isSelect ? <Card key={`${index}${tag.name}`} tag={tag}></Card><EmptyBlock2 key={`${index}${tag.name}${tag.isSelect}`}/>:<></>
-                    </>
+                    tag.isSelect 
+                    ? <Card key={`${index}${tag.name}`} tag={tag}></Card>
+                    : <></>
                 )
             }
             </FadeIn>
@@ -50,27 +50,24 @@ const EmptyBlock = styled.section`
     height: 5%;
 `
 
-const EmptyBlock2 = styled.div`
-    height: 1%;
-`
-
 const TimeSection = styled.section`
     text-align: center;
-    color: white;
+    color: black;
     font-size: 5em;
     font-weight: 200;
 `
 
 const DateSection = styled.section`
     text-align: center;
-    color: white;
+    color: black;
     font-size: 2em;
     font-weight: 100;
 `
 
 const StyleSection = styled.section`
+    text-align: center;
     width: 50vw;
     height: 100vh;
-    background-color: black;
+    background-color: white;
     overflow: scroll;
 `;
