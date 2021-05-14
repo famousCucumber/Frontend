@@ -20,7 +20,6 @@ const SuccessModal = ({ isOpenModal, setIsOpenModal }: SuccessModalProps) => {
         >
             <ModalDiv onClick={onClick}>
                 <ModalH1>구독 성공하였습니다 :D</ModalH1>
-                <ModalP>더욱 자세히 알고 싶다면? 여길로 와보세용</ModalP>
             </ModalDiv>
         </CSSTransition>
     );
@@ -80,11 +79,5 @@ const ModalH1 = styled.h1`
     color: white;
     ${({ theme }) => theme.sizes.mobile} {
         font-size: 1.3rem;
-    }
-`;
-
-const ModalP = styled.p`
-    ${({ theme }) => theme.sizes.mobile} {
-        font-size: 0.75rem;
     }
 `;
